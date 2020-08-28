@@ -23,7 +23,7 @@ public abstract class LivingBeing : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    public void ReceiveDamage(float damage)
+    public virtual void ReceiveDamage(float damage)
     {
         _health -= damage;
         if (_health <= 0)

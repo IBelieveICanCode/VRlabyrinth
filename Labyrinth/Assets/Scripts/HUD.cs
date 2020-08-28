@@ -7,6 +7,8 @@ using TMPro;
 public class HUD : Singleton<HUD>
 {
     [SerializeField]
+    private TMP_Text healthText;
+    [SerializeField]
     private float _secondsToFade = 3;
     [SerializeField]
     private float _secondsToRestart = 5;
@@ -18,7 +20,11 @@ public class HUD : Singleton<HUD>
     }
     public void Exit()
     {
-        Application.Quit();
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+            Application.Quit();
+        #endif
     }
     public void Defeat()
     {
@@ -26,5 +32,10 @@ public class HUD : Singleton<HUD>
         StartCoroutine(Utility.Fade(_secondsToFade, fadeImage));
         Timer _timer = new Timer(_secondsToRestart + _secondsToFade, GameController.Instance.LoseEvent.Invoke, true);
         _timer.Restart();
+    }
+
+    public void UpdateHealth(float health)
+    {
+        healthText.text = health.ToString();
     }
 }

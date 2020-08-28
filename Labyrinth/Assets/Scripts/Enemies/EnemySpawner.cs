@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
     public void CreateEnemy(string tag)
     {
         GameObject enemy = ObjectPooler.Instance.GetPooledObject(tag);
-        enemy.transform.position = NavMeshUtil.GetRandomPoint(transform.position.normalized, 100);
+        enemy.transform.position = NavMeshUtil.GetRandomPoint(transform.position.normalized);
         EventHandler handler = null;
         handler = (sender, e) =>
         {
@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void ResetEnemy(GameObject enemy)
     {
-        enemy.transform.position = NavMeshUtil.GetRandomPoint(transform.position.normalized, 100);
+        enemy.transform.position = NavMeshUtil.GetRandomPoint(transform.position.normalized);
         enemy.gameObject.SetActive(true);
     }
 }

@@ -50,6 +50,7 @@ public class LaserGun : Weapon
 
     private IEnumerator LaserShoot()
     {
+        AudioManager.PlayMusic("Laser");
         _lineRenderer.enabled = true;
         yield return new WaitForSeconds(0.2f);
         _lineRenderer.enabled = false;

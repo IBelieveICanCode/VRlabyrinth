@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using ObjectPool;
 using System;
-using TreeEditor;
 
 public class MachineGunWeapon : Weapon
 {
@@ -71,6 +70,7 @@ public class MachineGunWeapon : Weapon
         bullet.gameObject.SetActive(true);
         bullet.Init(_damage, transform.forward);
         bullet.gameObject.transform.position = transform.position;
+        AudioManager.PlayMusic("Bullet");
         _ammo--;
     }
 }

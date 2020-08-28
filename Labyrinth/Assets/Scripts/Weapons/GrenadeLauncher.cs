@@ -25,6 +25,7 @@ public class GrenadeLauncher : Weapon
         bullet.gameObject.SetActive(true);
         bullet.gameObject.transform.position = transform.position;
         bullet.Init(_damage, CalculateArc(target));
+        AudioManager.PlayMusic("Grenade");
     }
 
     Vector3 CalculateArc(Transform target)

@@ -21,6 +21,13 @@ public class PlayerControl : LivingBeing, IPlayerCommunicator
     protected override void Init()
     {
         _controller = GetComponent<CharacterController>();
+        HUD.Instance.UpdateHealth(_health);
+    }
+
+    public override void ReceiveDamage(float damage)
+    {
+        base.ReceiveDamage(damage);
+        HUD.Instance.UpdateHealth(_health);
     }
 
     void Update()
@@ -33,9 +40,9 @@ public class PlayerControl : LivingBeing, IPlayerCommunicator
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             _endTouchPos = Input.GetTouch(0).position;
-            if (_endTouchPos.y > _startTouchPos.y)
+            if (_endTouchPos.y > _startTouchPos.y && Mathf.Abs(_endTouchPos.y - _startTouchPos.y) > 1f)
                 _isMoving = true;
-            else if (_endTouchPos.y < _startTouchPos.y)
+            else if (_endTouchPos.y < _startTouchPos.y && Mathf.Abs(_endTouchPos.y - _startTouchPos.y) > 1f)
                 _isMoving = false;
         }
 

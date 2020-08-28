@@ -23,7 +23,8 @@ public class GameController : Singleton<GameController>
     private void SetupPlayer(PlayerControl _player)
     {
         _player.gameObject.SetActive(true);
-        //_player.transform.position = NavMeshUtil.GetRandomPoint(transform.position, 100);
+        Vector3 newPos = NavMeshUtil.GetRandomPoint(transform.position);
+        _player.transform.position = new Vector3(newPos.x, 1, newPos.z);
     }
 
     public void LoadLevel()

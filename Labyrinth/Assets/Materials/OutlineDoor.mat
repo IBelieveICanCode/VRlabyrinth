@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OutlineDoor
-  m_Shader: {fileID: 4800000, guid: aa8a8312f0e869546b0b1d65deea6b29, type: 3}
-  m_ShaderKeywords: _EMISSION _NORMALMAP
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 154bcacf94664ef48a3d929ad903eac9, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -36,11 +36,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: c4a15ea94aeff6343a751991c897e6a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 05cafb4b88105f646b94fc243a6cede3, type: 3}
+        m_Texture: {fileID: 2800000, guid: c4a15ea94aeff6343a751991c897e6a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -92,7 +92,7 @@ Material:
     - _Metallic: 1
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Outline: 0.476
+    - _Outline: 0.294
     - _Parallax: 0.02
     - _RimPower: 1.42
     - _SmoothnessTextureChannel: 0
@@ -110,8 +110,8 @@ Material:
     - _myY: 2.3
     - _myZ: 5.2
     m_Colors:
-    - _Color: {r: 1, g: 0.9386792, b: 0.9386792, a: 1}
-    - _EmissionColor: {r: 0.4339623, g: 0.41144538, b: 0.41144538, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 1, b: 0.0724349, a: 0}
     - _OutlineColor: {r: 0.014198661, g: 1, b: 0, a: 1}
     - _RimColor: {r: 0, g: 0.2929263, b: 1, a: 1}
     - _SpeColor: {r: 1, g: 1, b: 1, a: 1}
