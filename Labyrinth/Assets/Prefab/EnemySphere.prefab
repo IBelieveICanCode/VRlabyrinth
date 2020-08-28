@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295000bb5144c53489332afef9a0fc0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secToChange: 1
+  _secToChange: 30
   _rend: {fileID: 1372646519043184998}
 --- !u!1 &1372646520045782810
 GameObject:

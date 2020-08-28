@@ -20,24 +20,19 @@ public class LaserGun : Weapon
 
     public override void Use(Transform target)
     {
-        if (Time.time > _nextSpawn)
+        if (Time.time > _nextSpawn && !_isShooting)
         {
+            _isShooting = true;
             Shoot(target);
-            _nextSpawn = Time.time + _reload;           
+            _nextSpawn = Time.time + _reload;
+            //_lineRenderer.enabled = false;
         }
-        else
-            _isShooting = false;
-    }
-
-    private void Update()
-    {
-        if(!_isShooting)
-            _lineRenderer.enabled = false;
+        //else if (Time.time < _nextSpawn)
+        //    _lineRenderer.enabled = false;
     }
 
     protected override void Shoot(Transform target)
     {
-        _isShooting = true;
         _lineRenderer.SetPosition(0, transform.position);
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.forward, out hit))
@@ -45,23 +40,30 @@ public class LaserGun : Weapon
             if (hit.collider)
             {
                 _lineRenderer.SetPosition(1, hit.point);
-                _lineRenderer.enabled = true;
                 IDamageable damageable = hit.collider.GetComponent<IDamageable>();
                 if (damageable != null)
                     damageable.ReceiveDamage(_damage);
-                    
+                StartCoroutine(LaserShoot());   
             }
         }        
+    }
+
+    private IEnumerator LaserShoot()
+    {
+        _lineRenderer.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        _lineRenderer.enabled = false;
+        _isShooting = false;
     }
 
     protected override void Reset()
     {
         _lineRenderer.enabled = false;
     }
-    //public void DrawLaser(LineRenderer line, Vector3 lastPoint)
-    //{
-    //    line.SetPosition(0, muzzle.transform.position);
-    //    line.SetPosition(1, lastPoint);
-    //    line.enabled = true;
-    //}
+    public void DrawLaser(LineRenderer line, Vector3 lastPoint)
+    {
+        line.SetPosition(0, transform.position);
+        line.SetPosition(1, lastPoint);
+        line.enabled = true;
+    }
 }

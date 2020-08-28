@@ -235,4 +235,5 @@ MonoBehaviour:
   _health: 0
   _howManyClicksToKill: 2
   _eye: {fileID: 8012615192288037568}
+  _fieldOfView: {fileID: 8012615192288037569}
   _weapon: {fileID: 8952621336174801148}
