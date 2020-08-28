@@ -40,9 +40,9 @@ public class PlayerControl : LivingBeing, IPlayerCommunicator
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             _endTouchPos = Input.GetTouch(0).position;
-            if (_endTouchPos.y > _startTouchPos.y && Mathf.Abs(_endTouchPos.y - _startTouchPos.y) > 1f)
+            if (_endTouchPos.y > _startTouchPos.y && (_endTouchPos - _startTouchPos).magnitude > 5f)
                 _isMoving = true;
-            else if (_endTouchPos.y < _startTouchPos.y && Mathf.Abs(_endTouchPos.y - _startTouchPos.y) > 1f)
+            else if (_endTouchPos.y < _startTouchPos.y && (_endTouchPos - _startTouchPos).magnitude > 5f)
                 _isMoving = false;
         }
 
