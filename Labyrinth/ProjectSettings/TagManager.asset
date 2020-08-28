@@ -5,8 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cube
-  - ship
-  - asteroid
+  - FirstEnemy
+  - SecondEnemy
+  - ThirdEnemy
+  - Bullet
+  - Grenade
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - 
   - 
   - Living
-  - 
+  - Bullet
   - 
   - 
   - 

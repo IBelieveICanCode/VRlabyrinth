@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Holo
-  m_Shader: {fileID: 4800000, guid: 4b6ff37c6c4d53f43abff5c05a04ae96, type: 3}
+  m_Name: Icosaedr
+  m_Shader: {fileID: 4800000, guid: 52e68910348ac2b4b9fe09da07286d75, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -67,13 +67,17 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RimPower: 0.5
+    - _Scale1: 4.71
+    - _Scale2: 5.41
+    - _Scale3: 5.7
+    - _Scale4: 4.64
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 30.6
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.13207549, g: 0, b: 0.01180362, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
