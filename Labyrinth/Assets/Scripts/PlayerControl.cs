@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerControl : LivingBeing, IPlayerCommunicator
 {
@@ -32,6 +33,14 @@ public class PlayerControl : LivingBeing, IPlayerCommunicator
 
     void Update()
     {
+
+    #if UNITY_EDITOR
+        Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));;
+        PlayerMovement(moveInput);
+        if (Input.GetKey(KeyCode.Mouse0))
+            CheckClickableObjects();
+
+    #endif
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             CheckClickableObjects();
@@ -47,16 +56,15 @@ public class PlayerControl : LivingBeing, IPlayerCommunicator
         }
 
         if (_isMoving)
-            PlayerMovement();
+            PlayerMovement(Vector3.forward);
     }
 
     public override void Die()
     {
         HUD.Instance.Defeat();
     }
-    void PlayerMovement()
+    void PlayerMovement(Vector3 direction)
     {
-        Vector3 direction = Vector3.forward;
         Vector3 velocity = direction * Speed;
         velocity = Camera.main.transform.TransformDirection(velocity);
         velocity.y -= _gravity;

@@ -4455,7 +4455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _health: 0
-  _distanceOfRaycast: 10
+  _distanceOfRaycast: 100
   Speed: 3.5
 --- !u!143 &1500408832
 CharacterController:
